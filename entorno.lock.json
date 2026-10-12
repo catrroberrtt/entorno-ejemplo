@@ -1,0 +1,73 @@
+{
+  "generador": "meta-harness 0.7.0",
+  "fecha": "2026-10-12",
+  "opciones": {
+    "nombre": "entorno-ejemplo",
+    "modulos": [
+      "documentacion-primero",
+      "compuerta-calidad",
+      "conocimiento",
+      "escaneo-secretos",
+      "autoguardado",
+      "publicar-solo-verificado",
+      "bloqueo-datos",
+      "formato-de-pr",
+      "inventario-de-fuentes",
+      "sello-de-verificacion",
+      "aprendizaje"
+    ],
+    "agentes": [
+      "claude",
+      "codex"
+    ],
+    "perfiles": [
+      "nestjs-typeorm-mysql"
+    ]
+  },
+  "archivos": {
+    ".claude/settings.json": "be2031a9e30c841360310d597701a1f1339e2ea5464321f90408c610cfb038d3",
+    ".codex/hooks.json": "4236cec19fb15a62b11efde85be2635545739d42ad91b781fb15fba0b1ccb637",
+    ".gitignore": "cad04b90bf4f2d6a248247beb986d35e77430266744c5696eb1a6e18050135a0",
+    "AGENTS.md": "d254ddb91711944afe1e72f41cb51436b62f32aada9d6e0c54791b36a1f17241",
+    "CLAUDE.md": "ff771765bf007eda7c33cb217ceb22b988cd7f2bf2a7cd0d95fea851c9d54790",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "NOTICE": "5965ff5184f083c833c1c15abc65d1c25dba9287d0f0bee41d1c9191c2d59667",
+    "README.md": "fd5283c5ddcd9c4496e20f1633e4aa282b93d7e87c0099328fa0beacae5a4134",
+    "docs/CODEX.md": "45dfc4524ade6e26c6268c364114b8a5fb64b2acd2763a6580024d63568ea1e5",
+    "docs/ORIGEN.md": "a103813614d88c66e412c0f630a103602cc9fbd5f792040fa71d53f369497549",
+    "docs/revisor-independiente.md": "d7b515d5833419fd8875f8ccea6d9e8fdabfe8cbedf8a28775542365e5cca832",
+    "entorno.toml": "52909b42e13f77946e6d62b9eaadd71489de4ef2eaa9d4555c204a1c44526549",
+    "estandares/nestjs-typeorm-mysql/README.md": "11bc9783085486822d9d5e6d896f6b64f0576715e9271156eb409866e5fbea2c",
+    "estandares/nestjs-typeorm-mysql/arquitectura.md": "80cf8f6d33c5c82c0bc0bfed31362bceeb8f9b12878d71daf4b10379c09af430",
+    "estandares/nestjs-typeorm-mysql/codificacion.md": "899c15a297b188834f5a2ed47a0609be149fd49f8f270f6d4d1437c58a482e08",
+    "estandares/nestjs-typeorm-mysql/datos.md": "8c9faa8778ac2eab3aab04eaa4088a7f2b128cb6236b459d96fc04217769de5b",
+    "estandares/nestjs-typeorm-mysql/errores-frecuentes/README.md": "e27712e32d8f8e49b3a33f6efe8e1b63b3be1fcc24fc21b028190d57bf1138d7",
+    "estandares/nestjs-typeorm-mysql/evidencia.md": "ecdc36f5ca81eed6294b6d6d16df951b75c7e1e7a30d2057e7514a9b31bc823d",
+    "estandares/nestjs-typeorm-mysql/observabilidad.md": "92eb0f1113df21472a265dd7aa75a9e8dec2c2a291c3f1db05b1a7db0d034b21",
+    "estandares/nestjs-typeorm-mysql/patrones.md": "bc6c055e02a4d0f3652796f19ce1da976dd926f76d43d0fcd0ba86d6fc7e33f9",
+    "estandares/nestjs-typeorm-mysql/pruebas.md": "0f2ba77d6bc51d3ea6323e9492a5809ba6f1982494be31f6fa2602125f45da5d",
+    "estandares/nestjs-typeorm-mysql/recetas/README.md": "2edbc6a5fee349d9d2265cb0495746896b3d1c8abc68efe3b68ed0111cd2f7c0",
+    "estandares/nestjs-typeorm-mysql/rendimiento.md": "7d5fb6610a7111614a9a5ee2282e98ffcec203e8af21d5856c31270594d9886f",
+    "estandares/nestjs-typeorm-mysql/seguridad.md": "2883326e9249c8f6d9452bf50a2f386e7e61d3967bdb480552ba69a3b92acbe4",
+    "hooks/_comandos.py": "af0b21da2033d07330698bffd1ce148e866137757f5c6fa3f8e8c29bc9f94dae",
+    "hooks/autoguardado.sh": "399c626d8ab4181016d743ed14b9392ee3d2d0df68466bca68b02d867f29f8a8",
+    "hooks/bloquear-datos.py": "6954a40312af33e07351e02610e97f851fb50a403e356e20cc77188f3e9ea4f8",
+    "hooks/documentacion-primero.py": "b58362b1457abbc96b3d1995c571b2af5244f3cfdd489b704fd2a9c88a13b320",
+    "hooks/formato-de-pr.py": "97b30ea8624087f8f8e7641dc39a544da3e31b3f475926f9d13301b9297d99b0",
+    "hooks/gate-antes-de-commit.py": "5de576054df24ed58c108e447538f7f6af06f9440eda925ff08e270099be045e",
+    "hooks/publicar-solo-verificado.py": "1304040e79ee3160275e357af5f36718804ccb6bce1db3c4c500e58a5cc50ccb",
+    "instalar.sh": "c429f61c5ee631243ec1f6f0ede666aeccb3959cf31dc4f4ab4fa63edcf11b9b",
+    "knowledge/INDICE.md": "837f984e0a559015c7dc5c4b357b8a443282a24cd9b1cdcdc34da2a9ae8a041e",
+    "knowledge/aprendizaje.md": "69ad3738b00e98cc6c50d93f344f1058cadcd6b1eb8a4a8d0b7e56332970839c",
+    "scripts/aprender.py": "fc24cf7f082cbc03517abfc93bb210c4db431d602215cd29e6c2310e740733a9",
+    "scripts/autoguardar.py": "8723e7eb36559d823b3df1f5ee5813cab14d4146afa236f6d984d217b492a17b",
+    "scripts/buscar-documentacion.py": "f87e71771e37a6db12a02509206d27f2ae980aaebeff06ae572583310a1deea4",
+    "scripts/escanear-secretos.py": "abd3e106f977c49f0013ae244a61fee59ae4e23abdd3d891d7fbb2c4eb1db6ce",
+    "scripts/frescura.py": "50da0c88082fbf44f762be2b6ae268d5d5b9dab12f087f80645d6e31886e8be5",
+    "scripts/gate.sh": "458e9f6707b0b7cb0f4118f1bb20cd2d965863ddcc37c33d37e3b284523d8665",
+    "scripts/inventario-fuentes.py": "d6ca10f22e1ac588e1d0ecc7da587722b1ba09314bcbcce4e06d1734204f0619",
+    "scripts/sellos.py": "418c90efb52a2bff12c3945f5d56f9429f55fa240fe607dd575914641aa02aff",
+    "scripts/verificar-publicacion.py": "36d61cdcf1831ef246f4cddcf7d295d3a1c5e1ce66a28f5fac3c636bf306e64b",
+    "verificar.sh": "4f3e9f28a9e090502509c4b87d8de400634bff1764289333e3207ede548b9b75"
+  }
+}

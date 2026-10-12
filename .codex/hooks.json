@@ -1,0 +1,63 @@
+{
+  "_generado_por": "meta-harness (entorno propio): ver docs/CODEX.md. Un hook nuevo no corre hasta que lo confíes con /hooks en Codex.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/gate-antes-de-commit.py\"",
+            "timeout": 30,
+            "statusMessage": "gate-antes-de-commit"
+          }
+        ]
+      },
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/publicar-solo-verificado.py\"",
+            "timeout": 30,
+            "statusMessage": "publicar-solo-verificado"
+          }
+        ]
+      },
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/bloquear-datos.py\"",
+            "timeout": 30,
+            "statusMessage": "bloquear-datos"
+          }
+        ]
+      },
+      {
+        "matcher": "^Bash$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/formato-de-pr.py\"",
+            "timeout": 30,
+            "statusMessage": "formato-de-pr"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$(git rev-parse --show-toplevel)/hooks/autoguardado.sh\"",
+            "timeout": 30,
+            "statusMessage": "autoguardado"
+          }
+        ]
+      }
+    ]
+  }
+}

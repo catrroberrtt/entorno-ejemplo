@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/hooks/documentacion-primero.sh\""
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/documentacion-primero.py\""
           }
         ]
       }
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"$CLAUDE_PROJECT_DIR/hooks/gate-antes-de-commit.sh\""
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/gate-antes-de-commit.py\""
           }
         ]
       },
@@ -26,6 +26,24 @@
           {
             "type": "command",
             "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/publicar-solo-verificado.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/bloquear-datos.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/hooks/formato-de-pr.py\""
           }
         ]
       }

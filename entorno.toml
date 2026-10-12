@@ -1,9 +1,9 @@
 # Configuración del entorno. Es el único archivo que hace falta tocar para adaptarlo.
 [entorno]
 nombre = "entorno-ejemplo"
-origen = "meta-harness 0.6.0"
+origen = "meta-harness"
 generado = "2026-10-12"
-modulos = ["documentacion-primero", "compuerta-calidad", "conocimiento", "escaneo-secretos", "autoguardado", "publicar-solo-verificado", "aprendizaje"]
+modulos = ["documentacion-primero", "compuerta-calidad", "conocimiento", "escaneo-secretos", "autoguardado", "publicar-solo-verificado", "bloqueo-datos", "formato-de-pr", "inventario-de-fuentes", "sello-de-verificacion", "aprendizaje"]
 agentes = ["claude", "codex"]
 
 [documentacion]
@@ -25,7 +25,7 @@ rama = "main"
 
 [publicar]
 # Comandos que publican texto hacia otras personas. El hook exige la marca de verificación del texto exacto.
-comandos = ["gh pr create", "gh pr edit", "gh pr comment", "gh issue create", "gh issue comment", "gh release create"]
+comandos = ["gh pr create", "gh pr edit", "gh pr comment", "gh pr review", "gh pr merge", "gh issue create", "gh issue comment", "gh issue edit", "gh release create", "gh release edit"]
 # 1 = comprobación mecánica; 2 = además, revisión independiente (docs/revisor-independiente.md).
 exigir_nivel = 1
 ttl_horas = 3
@@ -37,3 +37,31 @@ ttl_horas = 3
 # patron = "[A-Z]+-[0-9]+"
 # comprobar = ["./scripts/estado-ticket.sh", "{id}"]
 # estados_cerrados = ["DONE", "CERRADO"]
+
+[datos]
+# Hosts a los que el agente puede conectarse con un cliente de base de datos. Todo lo demás se rechaza.
+hosts_permitidos = ["127.0.0.1", "localhost", "::1"]
+# true = ni siquiera en un host permitido se escribe (INSERT, UPDATE, DELETE, DROP, ALTER, TRUNCATE, CREATE...). La garantía real es que el
+# usuario de base de datos del agente sea de SOLO LECTURA; este hook evita el descuido y deja rastro.
+solo_lectura = true
+
+# Tipos de PR y las secciones que cada uno exige. Sin tipos declarados, el módulo no hace nada. Ejemplo (descomenta y adapta):
+# [[pr.tipos]]
+# nombre = "pase a producción"
+# cuando_base = "^main$"             # se reconoce por la rama base...
+# secciones = ["Resumen del cambio", "Plan de despliegue", "Plan de respaldo"]
+#
+# [[pr.tipos]]
+# nombre = "corrección"
+# cuando_titulo = "^fix"             # ...o por el título
+# secciones = ["Qué resuelve", "Pruebas"]
+
+[fuentes]
+# Días que un sello `verificado-contra-git` se considera vigente (lo revisa scripts/sellos.py).
+vigencia_dias = 7
+
+# Repositorios de los que depende un análisis. «referencia» es contra lo que se compara: la rama validada, no la rama local de turno.
+# [[fuentes.repos]]
+# nombre = "api"
+# ruta = "~/proyectos/api"
+# referencia = "origin/main"

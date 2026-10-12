@@ -1,6 +1,6 @@
 # entorno-ejemplo
 
-Entorno de trabajo para agentes de programación, generado por **meta-harness 0.6.0** el 2026-10-12.
+Entorno de trabajo para agentes de programación, generado con **meta-harness** el 2026-10-12.
 Es **independiente**: no necesita el meta-harness para funcionar ni para actualizarse. Lo que contiene es tuyo.
 
 ## Qué trae (módulos elegidos)
@@ -11,6 +11,10 @@ Es **independiente**: no necesita el meta-harness para funcionar ni para actuali
 - **escaneo-secretos**: Escaneo de claves, tokens y credenciales en lo versionado
 - **autoguardado**: Commit automático al cerrar la sesión (subida opcional y desactivada por defecto)
 - **publicar-solo-verificado**: Nada se publica (PR, comentario, nota de versión) sin verificar el texto contra sus fuentes
+- **bloqueo-datos**: El agente no escribe en bases de datos ni se conecta a ambientes que no son locales (barrera, no garantía)
+- **formato-de-pr**: Un PR no se crea sin las secciones que exige su tipo (pase a producción, observaciones...), según tus tipos declarados
+- **inventario-de-fuentes**: Foto de los repositorios antes de analizar: contra qué rama de referencia se compara y líneas de sello para pegar
+- **sello-de-verificacion**: Los sellos `verificado-contra-git` de los documentos caducan: se revisan contra la rama de referencia
 - **aprendizaje**: Lecciones con evidencia: no hay regla sin evidencia y toda regla se revierte
 
 ## Cómo se usa
