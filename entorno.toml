@@ -1,0 +1,39 @@
+# Configuración del entorno. Es el único archivo que hace falta tocar para adaptarlo.
+[entorno]
+nombre = "entorno-ejemplo"
+origen = "meta-harness 0.6.0"
+generado = "2026-10-12"
+modulos = ["documentacion-primero", "compuerta-calidad", "conocimiento", "escaneo-secretos", "autoguardado", "publicar-solo-verificado", "aprendizaje"]
+agentes = ["claude", "codex"]
+
+[documentacion]
+# Carpetas donde se busca primero (relativas a la raíz de este repo).
+rutas = ["docs", "knowledge"]
+
+[gate]
+# Comandos de la compuerta, en orden; cada uno se ejecuta sin shell. Ejemplo: ["npm", "test"].
+comandos = []
+# Si es true, el hook impide `git commit` mientras la compuerta no haya pasado en la última hora.
+bloquear_commit = false
+
+[autoguardado]
+# Commit local automático al cerrar la sesión (solo si el escaneo de secretos pasa).
+commit = true
+# Subir al remoto. Desactivado a propósito: actívalo cuando confíes en tu escaneo.
+subir = false
+rama = "main"
+
+[publicar]
+# Comandos que publican texto hacia otras personas. El hook exige la marca de verificación del texto exacto.
+comandos = ["gh pr create", "gh pr edit", "gh pr comment", "gh issue create", "gh issue comment", "gh release create"]
+# 1 = comprobación mecánica; 2 = además, revisión independiente (docs/revisor-independiente.md).
+exigir_nivel = 1
+ttl_horas = 3
+
+# De dónde sale la verdad de cada referencia. Un bloque por tipo; el comando recibe el identificador en {id}, debe
+# terminar con 0 si existe e imprimir el estado en la primera línea. Ejemplo (descomenta y adapta):
+# [[publicar.referencias]]
+# nombre = "ticket"
+# patron = "[A-Z]+-[0-9]+"
+# comprobar = ["./scripts/estado-ticket.sh", "{id}"]
+# estados_cerrados = ["DONE", "CERRADO"]
